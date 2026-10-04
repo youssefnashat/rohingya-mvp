@@ -1,0 +1,50 @@
+[
+  { "id": "doc-need-doctor", "englishMeaning": "I need to see a doctor", "category": "doctor", "icon": "👩‍⚕️", "audioUrl": "/audio/doc-need-doctor.wav", "keywords": ["see a doctor", "need a doctor"] },
+  { "id": "doc-pain", "englishMeaning": "I have pain here", "category": "doctor", "icon": "🤕", "audioUrl": "/audio/doc-pain.wav", "keywords": ["pain", "hurt", "hurts", "where is the pain"] },
+  { "id": "doc-fever", "englishMeaning": "I have a fever", "category": "doctor", "icon": "🤒", "audioUrl": "/audio/doc-fever.wav", "keywords": ["fever", "temperature"] },
+  { "id": "doc-interpreter", "englishMeaning": "I need an interpreter", "category": "doctor", "icon": "🗣️", "audioUrl": "/audio/doc-interpreter.wav", "keywords": ["interpreter", "translator"] },
+  { "id": "doc-pregnant", "englishMeaning": "I am pregnant", "category": "doctor", "icon": "🤰", "audioUrl": "/audio/doc-pregnant.wav", "keywords": ["pregnant", "pregnancy"] },
+  { "id": "doc-child-sick", "englishMeaning": "My child is sick", "category": "doctor", "icon": "🧒", "audioUrl": "/audio/doc-child-sick.wav", "keywords": ["child is sick", "baby is sick", "sick child"] },
+  { "id": "doc-appointment", "englishMeaning": "I have an appointment", "category": "doctor", "icon": "📅", "audioUrl": "/audio/doc-appointment.wav", "keywords": ["appointment"] },
+
+  { "id": "pha-medicine", "englishMeaning": "I need this medicine", "category": "pharmacy", "icon": "💊", "audioUrl": "/audio/pha-medicine.wav", "keywords": ["medicine", "medication", "prescription", "pills"] },
+  { "id": "pha-how-take", "englishMeaning": "How do I take this?", "category": "pharmacy", "icon": "❓", "audioUrl": "/audio/pha-how-take.wav", "keywords": ["how do i take", "how to take", "dose"] },
+  { "id": "pha-how-much", "englishMeaning": "How much does it cost?", "category": "pharmacy", "icon": "💵", "audioUrl": "/audio/pha-how-much.wav", "keywords": ["how much", "cost", "price"] },
+  { "id": "pha-allergy", "englishMeaning": "I have an allergy", "category": "pharmacy", "icon": "⚠️", "audioUrl": "/audio/pha-allergy.wav", "keywords": ["allergy", "allergic", "allergies"] },
+  { "id": "pha-refill", "englishMeaning": "I need a refill", "category": "pharmacy", "icon": "🔁", "audioUrl": "/audio/pha-refill.wav", "keywords": ["refill"] },
+
+  { "id": "bus-which", "englishMeaning": "Which bus goes here?", "category": "bus", "icon": "🚌", "audioUrl": "/audio/bus-which.wav", "keywords": ["which bus", "what bus"] },
+  { "id": "bus-stop", "englishMeaning": "Please tell me when to get off", "category": "bus", "icon": "🛑", "audioUrl": "/audio/bus-stop.wav", "keywords": ["get off", "your stop", "next stop"] },
+  { "id": "bus-ticket", "englishMeaning": "I need a ticket", "category": "bus", "icon": "🎫", "audioUrl": "/audio/bus-ticket.wav", "keywords": ["ticket", "fare", "transfer"] },
+  { "id": "bus-lost", "englishMeaning": "I am lost", "category": "bus", "icon": "🧭", "audioUrl": "/audio/bus-lost.wav", "keywords": ["lost"] },
+  { "id": "bus-when", "englishMeaning": "When does the bus come?", "category": "bus", "icon": "⏰", "audioUrl": "/audio/bus-when.wav", "keywords": ["when does the bus", "bus come", "bus schedule"] },
+  { "id": "bus-address", "englishMeaning": "Please take me to this address", "category": "bus", "icon": "📍", "audioUrl": "/audio/bus-address.wav", "keywords": ["address", "where are you going"] },
+
+  { "id": "sch-register", "englishMeaning": "I want to register my child", "category": "school", "icon": "📝", "audioUrl": "/audio/sch-register.wav", "keywords": ["register", "registration", "enroll"] },
+  { "id": "sch-teacher", "englishMeaning": "I want to speak to the teacher", "category": "school", "icon": "👩‍🏫", "audioUrl": "/audio/sch-teacher.wav", "keywords": ["teacher"] },
+  { "id": "sch-absent", "englishMeaning": "My child cannot come to school today", "category": "school", "icon": "🏠", "audioUrl": "/audio/sch-absent.wav", "keywords": ["absent", "cannot come to school", "stay home"] },
+  { "id": "sch-pickup", "englishMeaning": "I am here to pick up my child", "category": "school", "icon": "🚸", "audioUrl": "/audio/sch-pickup.wav", "keywords": ["pick up", "pickup"] },
+  { "id": "sch-english", "englishMeaning": "I want to learn English", "category": "school", "icon": "📚", "audioUrl": "/audio/sch-english.wav", "keywords": ["learn english", "english class"] },
+
+  { "id": "hou-heat", "englishMeaning": "The heating is not working", "category": "housing", "icon": "🥶", "audioUrl": "/audio/hou-heat.wav", "keywords": ["heating", "heat", "cold", "furnace"] },
+  { "id": "hou-water", "englishMeaning": "There is no water", "category": "housing", "icon": "🚰", "audioUrl": "/audio/hou-water.wav", "keywords": ["water", "leak"] },
+  { "id": "hou-rent", "englishMeaning": "I am here to pay rent", "category": "housing", "icon": "🏠", "audioUrl": "/audio/hou-rent.wav", "keywords": ["rent"] },
+  { "id": "hou-repair", "englishMeaning": "Something is broken", "category": "housing", "icon": "🔧", "audioUrl": "/audio/hou-repair.wav", "keywords": ["broken", "repair", "fix"] },
+  { "id": "hou-key", "englishMeaning": "I lost my key", "category": "housing", "icon": "🔑", "audioUrl": "/audio/hou-key.wav", "keywords": ["key", "keys", "locked out"] },
+  { "id": "hou-landlord", "englishMeaning": "I need to talk to the landlord", "category": "housing", "icon": "🧑‍💼", "audioUrl": "/audio/hou-landlord.wav", "keywords": ["landlord", "building manager"] },
+
+  { "id": "emg-ambulance", "englishMeaning": "I need an ambulance", "category": "emergency", "icon": "🚑", "audioUrl": "/audio/emg-ambulance.wav", "keywords": ["ambulance"] },
+  { "id": "emg-police", "englishMeaning": "I need the police", "category": "emergency", "icon": "🚓", "audioUrl": "/audio/emg-police.wav", "keywords": ["police"] },
+  { "id": "emg-fire", "englishMeaning": "There is a fire", "category": "emergency", "icon": "🔥", "audioUrl": "/audio/emg-fire.wav", "keywords": ["fire"] },
+  { "id": "emg-help", "englishMeaning": "Help me", "category": "emergency", "icon": "🆘", "audioUrl": "/audio/emg-help.wav", "keywords": ["help me", "need help"] },
+  { "id": "emg-unsafe", "englishMeaning": "I am not safe", "category": "emergency", "icon": "🛡️", "audioUrl": "/audio/emg-unsafe.wav", "keywords": ["not safe", "unsafe", "are you safe", "danger"] },
+
+  { "id": "rep-yes", "englishMeaning": "Yes", "category": "replies", "icon": "✅", "audioUrl": "/audio/rep-yes.wav", "keywords": ["yes", "okay", "ok"] },
+  { "id": "rep-no", "englishMeaning": "No", "category": "replies", "icon": "❌", "audioUrl": "/audio/rep-no.wav", "keywords": ["no"] },
+  { "id": "rep-wait", "englishMeaning": "Wait here", "category": "replies", "icon": "✋", "audioUrl": "/audio/rep-wait.wav", "keywords": ["wait here", "wait", "one moment"] },
+  { "id": "rep-tomorrow", "englishMeaning": "Come back tomorrow", "category": "replies", "icon": "🌅", "audioUrl": "/audio/rep-tomorrow.wav", "keywords": ["come back tomorrow", "tomorrow"] },
+  { "id": "rep-card", "englishMeaning": "Show your card", "category": "replies", "icon": "🪪", "audioUrl": "/audio/rep-card.wav", "keywords": ["your card", "health card", "show your card", "id card"] },
+  { "id": "rep-sign", "englishMeaning": "Please sign here", "category": "replies", "icon": "✍️", "audioUrl": "/audio/rep-sign.wav", "keywords": ["sign here", "signature", "sign"] },
+  { "id": "rep-thanks", "englishMeaning": "Thank you", "category": "replies", "icon": "🙏", "audioUrl": "/audio/rep-thanks.wav", "keywords": ["thank you", "thanks"] },
+  { "id": "rep-not-understand", "englishMeaning": "I do not understand", "category": "replies", "icon": "🤷", "audioUrl": "/audio/rep-not-understand.wav", "keywords": ["do not understand", "don t understand"] }
+]

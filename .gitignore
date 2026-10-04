@@ -1,0 +1,5 @@
+node_modules
+dist
+# runtime data: recordings, review queue
+server/data/runtime
+.env
