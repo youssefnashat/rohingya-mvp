@@ -4,6 +4,7 @@ A voice-first translation app for Rohingya newcomers in Canada.
 
 **This is a demo.** There is no Rohingya audio or Rohingya speech model yet.
 Wherever Rohingya should play, the app speaks the English meaning instead.
+<img width="872" height="967" alt="image" src="https://github.com/user-attachments/assets/8e19caa4-c63c-466a-9608-d888e154fa80" />
 
 ## Features
 
