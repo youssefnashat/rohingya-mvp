@@ -2,7 +2,7 @@ import express from 'express';
 import fs from 'node:fs';
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { providers, wizard, type RohingyaMode } from './providers';
+import { providers } from './providers';
 import { AUDIO_DIR, RECORDINGS_DIR, SERVER_DIR, appendToList, loadPhrases, readList, saveRecording, writeList } from './storage';
 
 const PORT = Number(process.env.PORT ?? 3001);
@@ -55,31 +55,14 @@ app.post('/api/translate/en-to-roh', async (req, res) => {
 app.post('/api/translate/roh-to-en', async (req, res) => {
   const body = audioBody(req, res);
   if (!body) return;
-  const mode: RohingyaMode = req.query.mode === 'wizard' ? 'wizard' : 'mock';
   const audioUrl = saveRecording(body.audio, body.mimeType, 'talk');
-  const result = await providers.rohingyaToEnglish[mode].translate({ ...body, audioUrl });
+  const result = await providers.rohingyaToEnglish.translate({ ...body, audioUrl });
   res.json({
     exchangeId: randomUUID(),
     audioUrl,
-    mode,
     ...result,
     lowConfidence: result.confidence < CONFIDENCE_THRESHOLD,
   });
-});
-
-// ---- Wizard mode (/helper page) -------------------------------------------
-
-app.get('/api/helper/pending', (_req, res) => {
-  res.json(wizard.listPending());
-});
-
-app.post('/api/helper/:id/answer', (req, res) => {
-  const englishText = String(req.body?.englishText ?? '').trim();
-  if (!englishText) return res.status(400).json({ error: 'englishText is required' });
-  if (!wizard.answer(req.params.id, englishText)) {
-    return res.status(404).json({ error: 'Request not found (already answered or timed out)' });
-  }
-  res.json({ ok: true });
 });
 
 // ---- Review queue (thumbs-down on any translation) ------------------------

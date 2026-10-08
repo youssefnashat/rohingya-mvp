@@ -36,7 +36,6 @@ export interface EnglishTTS {
 export interface RohingyaAudio {
   audio: Buffer;
   mimeType: string;
-  /** Where the saved clip can be fetched from (used by the wizard helper page). */
   audioUrl: string;
 }
 
