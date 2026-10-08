@@ -15,7 +15,6 @@ interface Exchange {
   askedToRepeat: boolean;
   phraseIds: string[];
   audioUrl?: string;
-  mode?: string;
 }
 
 function ConfidenceBar({ exchange }: { exchange: Exchange | null }) {
@@ -45,7 +44,6 @@ export default function Conversation() {
   const [status, setStatus] = useState<Status>('idle');
   const [exchange, setExchange] = useState<Exchange | null>(null);
   const [flagged, setFlagged] = useState(false);
-  const [wizardMode, setWizardMode] = useState(false);
   const stopEnglish = useRef<(() => void) | null>(null);
 
   const finish = (next: Exchange) => {
@@ -98,7 +96,7 @@ export default function Conversation() {
       if (status === 'recording-roh') {
         const blob = await recorder.stop();
         setStatus('busy');
-        const result = await api.rohToEn(blob, wizardMode ? 'wizard' : 'mock');
+        const result = await api.rohToEn(blob);
         finish({ ...result, direction: 'roh-to-en', askedToRepeat: result.lowConfidence, phraseIds: [] });
         if (result.lowConfidence) await playClip(PLEASE_REPEAT);
         else await speakEnglish(result.englishText);
@@ -151,7 +149,7 @@ export default function Conversation() {
           {status === 'listening-en' ? (
             <span className="text-sky-300">Listening… tap to stop</span>
           ) : working ? (
-            <span className="text-sky-300">{wizardMode ? 'Waiting for the helper…' : 'Translating…'}</span>
+            <span className="text-sky-300">Translating…</span>
           ) : status === 'error' ? (
             <span className="text-yellow-300">Something went wrong. Check the microphone and try again.</span>
           ) : !exchange ? (
@@ -184,18 +182,15 @@ export default function Conversation() {
         </div>
       </section>
 
-      {/* DIVIDER — confidence indicator, plus the demo operator's wizard-mode switch. */}
+      {/* DIVIDER — confidence indicator, plus the "call a translator" fallback. */}
       <div className="flex items-center gap-3 bg-black px-3 py-2">
         <ConfidenceBar exchange={exchange} />
+        {/* ponytail: no real translator line wired up yet — placeholder until there's a number/service to call. */}
         <button
-          aria-label="Wizard mode: a human helper translates"
-          aria-pressed={wizardMode}
-          onClick={() => setWizardMode((on) => !on)}
-          className={`flex h-12 w-12 items-center justify-center rounded-xl text-2xl ${
-            wizardMode ? 'bg-purple-600' : 'bg-neutral-800 opacity-60'
-          }`}
+          aria-label="Call a translator"
+          className="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-800 text-2xl opacity-60"
         >
-          🧙
+          📞
         </button>
       </div>
 
@@ -207,7 +202,7 @@ export default function Conversation() {
           ) : status === 'recording-roh' ? (
             <span className="animate-pulse">👂</span>
           ) : working ? (
-            <span className="animate-pulse">{wizardMode ? '🧙' : '💭'}</span>
+            <span className="animate-pulse">💭</span>
           ) : !exchange ? (
             <span className="opacity-40">🗣️</span>
           ) : exchange.direction === 'en-to-roh' ? (

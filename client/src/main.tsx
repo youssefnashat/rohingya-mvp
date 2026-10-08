@@ -7,7 +7,6 @@ import Conversation from './screens/Conversation';
 import Phrases from './screens/Phrases';
 import Replies from './screens/Replies';
 import Teach from './screens/Teach';
-import Helper from './screens/Helper';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -18,7 +17,6 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/phrases" element={<Phrases />} />
         <Route path="/replies" element={<Replies />} />
         <Route path="/teach" element={<Teach />} />
-        <Route path="/helper" element={<Helper />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>

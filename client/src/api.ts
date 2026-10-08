@@ -20,7 +20,6 @@ export interface EnToRohResult {
 export interface RohToEnResult {
   exchangeId: string;
   audioUrl: string;
-  mode: 'mock' | 'wizard';
   englishText: string;
   confidence: number;
   lowConfidence: boolean;
@@ -33,12 +32,6 @@ export interface TeachRecording {
   createdAt: string;
   up: number;
   down: number;
-}
-
-export interface HelperRequest {
-  id: string;
-  audioUrl: string;
-  createdAt: string;
 }
 
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
@@ -57,15 +50,13 @@ export const api = {
   phrases: () => request<Phrase[]>('/api/phrases'),
   sttEnglish: (blob: Blob) => postAudio<{ text: string }>('/api/stt/english', blob),
   enToRoh: (text: string) => postJson<EnToRohResult>('/api/translate/en-to-roh', { text }),
-  rohToEn: (blob: Blob, mode: 'mock' | 'wizard') => postAudio<RohToEnResult>(`/api/translate/roh-to-en?mode=${mode}`, blob),
+  rohToEn: (blob: Blob) => postAudio<RohToEnResult>('/api/translate/roh-to-en', blob),
   review: (exchange: unknown) => postJson<{ ok: true }>('/api/review', exchange),
   consent: (blob: Blob) => postAudio<{ consentId: string }>('/api/teach/consent', blob),
   teachSave: (blob: Blob, promptId: string, consentId: string) =>
     postAudio<TeachRecording>(`/api/teach/recordings?promptId=${promptId}&consentId=${consentId}`, blob),
   teachList: () => request<TeachRecording[]>('/api/teach/recordings'),
   vote: (id: string, vote: 'up' | 'down') => postJson<TeachRecording>(`/api/teach/recordings/${id}/vote`, { vote }),
-  helperPending: () => request<HelperRequest[]>('/api/helper/pending'),
-  helperAnswer: (id: string, englishText: string) => postJson<{ ok: true }>(`/api/helper/${id}/answer`, { englishText }),
 };
 
 let phraseCache: Promise<Phrase[]> | null = null;
