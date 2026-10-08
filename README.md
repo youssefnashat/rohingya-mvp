@@ -7,19 +7,21 @@ Wherever Rohingya should play, the app speaks the English meaning instead.
 
 ## Features
 
-- **Talk** — split-screen conversation, top half flipped for the person
+- **Talk**: split-screen conversation, top half flipped for the person
   opposite. Each side has one mic. A confidence bar shows how sure the
   translation is. When it is unsure, the app asks the speaker to repeat instead
   of guessing. If the app is not working at all, pressing the phone icon calls
   a translator.
-- **Pictures** — 42 picture cards for the doctor, pharmacy, bus, school,
+- **Pictures**: 42 picture cards for the doctor, pharmacy, bus, school,
   housing and urgent situations. Tap a card to say it aloud.
-- **Replies** — quick answers for the English speaker (Yes, No, Wait here,
+- **Replies**: quick answers for the English speaker (Yes, No, Wait here,
   Come back tomorrow, Show your card, Please sign here).
-- **Teach** — community speakers record phrases in Rohingya after giving
+- **Teach**: community speakers record phrases in Rohingya after giving
   spoken consent; other speakers listen and vote thumbs up or down. This is
   how the app collects data to improve its translations.
-- **Thumbs-down** on any translation sends it to a review queue.
+- **Thumbs-down**: on any translation sends it to a review queue.
+
+Various other features could be added to this app later on.
 
 ## How the technical side is planned to work
 
